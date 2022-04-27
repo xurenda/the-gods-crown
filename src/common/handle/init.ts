@@ -1,5 +1,8 @@
 import { dateFormat } from '../util/date'
 
+/**
+ * 初始化全局变量
+ */
 export default function initGlobal() {
   // process.env.NODE_ENV: 'development' | 'production' | 'test'
   window.isDev = process.env.NODE_ENV === 'development'
