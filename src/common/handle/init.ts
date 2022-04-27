@@ -6,6 +6,8 @@ export default function initGlobal() {
 
   window.log = log
   window.logTrace = (...args: any[]) => {
+    if (!window.isDev) return
+
     log(args)
     console.trace()
   }
