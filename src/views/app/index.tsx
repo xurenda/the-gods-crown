@@ -1,5 +1,13 @@
+import { RecoilRoot } from 'recoil'
+
 function App() {
-  return <div className="App">ok</div>
+  window.log('App', window)
+
+  return (
+    <RecoilRoot>
+      <div>ok</div>
+    </RecoilRoot>
+  )
 }
 
 export default App
