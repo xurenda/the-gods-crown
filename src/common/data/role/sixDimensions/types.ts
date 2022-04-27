@@ -1,3 +1,14 @@
+export interface SixD {
+  power: number
+  constitution: number
+  skill: number
+  agility: number
+  perception: number
+  will: number
+}
+
+export type SixDArr = [number, number, number, number, number, number]
+
 export interface Dimension {
   key: DimensionKey
   grade: DimensionGrade
