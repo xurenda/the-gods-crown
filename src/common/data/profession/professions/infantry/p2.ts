@@ -10,6 +10,7 @@ export const warrior: Profession = {
   cn: '勇士',
   type: ProfessionType.infantry,
   grade: ProfessionGrade.P2,
+  Properties6D: generateSixDFromArr([8, 3, 1, 5, 0, 0]),
   Growth6D: generateSixDFromArr([0.58, 0.32, 0.15, 0.4, 0, 0]),
 }
 
@@ -18,5 +19,6 @@ export const scout: Profession = {
   cn: '斥候',
   type: ProfessionType.infantry,
   grade: ProfessionGrade.P2,
+  Properties6D: generateSixDFromArr([2, 2, 5, 8, 0, 0]),
   Growth6D: generateSixDFromArr([0.25, 0.22, 0.4, 0.58, 0, 0]),
 }

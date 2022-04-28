@@ -10,6 +10,7 @@ export const druid: Profession = {
   cn: '德鲁伊',
   type: ProfessionType.special,
   grade: ProfessionGrade.P2,
+  Properties6D: generateSixDFromArr([0, 2, 0, 0, 10, 5]),
   Growth6D: generateSixDFromArr([0, 0.22, 0, 0.07, 0.73, 0.44]),
 }
 
@@ -18,5 +19,6 @@ export const minister: Profession = {
   cn: '牧师',
   type: ProfessionType.special,
   grade: ProfessionGrade.P2,
+  Properties6D: generateSixDFromArr([0, 1, 0, 0, 6, 10]),
   Growth6D: generateSixDFromArr([0, 0.15, 0, 0.07, 0.51, 0.73]),
 }

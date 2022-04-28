@@ -4,7 +4,7 @@ export interface Profession {
   cn: string
   type: ProfessionType
   grade: ProfessionGrade
-  // Properties6D: SixD
+  Properties6D: SixD
   Growth6D: SixD
 }
 

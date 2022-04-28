@@ -10,5 +10,6 @@ export const selfTaughtWizard: Profession = {
   cn: '自学巫师',
   type: ProfessionType.special,
   grade: ProfessionGrade.P1,
+  Properties6D: generateSixDFromArr([0, 0, 2, 0.8, 3.4, 3.4]),
   Growth6D: generateSixDFromArr([0, 0.07, 0.165, 0.035, 0.195, 0.185]),
 }

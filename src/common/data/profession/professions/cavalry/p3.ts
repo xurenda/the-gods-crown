@@ -10,6 +10,7 @@ export const royalKnight: Profession = {
   cn: '皇家骑士',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P3,
+  Properties6D: generateSixDFromArr([7, 5, 9, 2, 0, 0]),
   Growth6D: generateSixDFromArr([0.8, 0.6, 1, 0.2, 0, 0]),
 }
 
@@ -18,6 +19,7 @@ export const greatHeavyCavalry: Profession = {
   cn: '重装骑兵',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P3,
+  Properties6D: generateSixDFromArr([10, 8, 3, 1, 0, 0]),
   Growth6D: generateSixDFromArr([1.1, 0.9, 0.4, 0.2, 0, 0]),
 }
 
@@ -26,6 +28,7 @@ export const raidCavalry: Profession = {
   cn: '掠袭骑兵',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P3,
+  Properties6D: generateSixDFromArr([6, 5, 3, 9, 0, 0]),
   Growth6D: generateSixDFromArr([0.7, 0.5, 0.4, 1, 0, 0]),
 }
 
@@ -34,6 +37,7 @@ export const leadershipCavalry: Profession = {
   cn: '统御骑士',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P3,
+  Properties6D: generateSixDFromArr([5, 5, 7, 1, 0, 4]),
   Growth6D: generateSixDFromArr([0.6, 0.65, 0.8, 0.1, 0, 0.45]),
 }
 
@@ -42,5 +46,6 @@ export const fearCavalry: Profession = {
   cn: '恐惧骑士',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P3,
+  Properties6D: generateSixDFromArr([10, 7, 2, 5, 0, 0]),
   Growth6D: generateSixDFromArr([1.05, 0.77, 0.26, 0.52, 0, 0]),
 }
