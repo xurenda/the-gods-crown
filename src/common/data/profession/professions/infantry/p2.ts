@@ -2,6 +2,7 @@
  * 步兵（P2）
  */
 
+import { generateSixDFromArr } from '@/common/data/role/sixDimensions/sixDUtil'
 import { Profession, ProfessionGrade, ProfessionType } from '../../types'
 
 export const warrior: Profession = {
@@ -9,6 +10,7 @@ export const warrior: Profession = {
   cn: '勇士',
   type: ProfessionType.infantry,
   grade: ProfessionGrade.P2,
+  Growth6D: generateSixDFromArr([0.58, 0.32, 0.15, 0.4, 0, 0]),
 }
 
 export const scout: Profession = {
@@ -16,4 +18,5 @@ export const scout: Profession = {
   cn: '斥候',
   type: ProfessionType.infantry,
   grade: ProfessionGrade.P2,
+  Growth6D: generateSixDFromArr([0.25, 0.22, 0.4, 0.58, 0, 0]),
 }

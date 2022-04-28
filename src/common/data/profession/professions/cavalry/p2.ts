@@ -2,6 +2,7 @@
  * 骑兵（P2）
  */
 
+import { generateSixDFromArr } from '@/common/data/role/sixDimensions/sixDUtil'
 import { Profession, ProfessionGrade, ProfessionType } from '../../types'
 
 export const lightCavalry: Profession = {
@@ -9,6 +10,7 @@ export const lightCavalry: Profession = {
   cn: '轻骑兵',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P2,
+  Growth6D: generateSixDFromArr([0.44, 0.32, 0.54, 0.15, 0, 0]),
 }
 
 export const heavyCavalry: Profession = {
@@ -16,4 +18,5 @@ export const heavyCavalry: Profession = {
   cn: '重骑兵',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P2,
+  Growth6D: generateSixDFromArr([0.54, 0.51, 0.25, 0.15, 0, 0]),
 }

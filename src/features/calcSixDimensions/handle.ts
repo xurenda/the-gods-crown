@@ -1,8 +1,6 @@
 import { calcLevelWithCoefficient } from '@/common/data/role/properties/level'
-import sixDUtil from '@/common/data/role/sixDimensions/sixDUtil'
+import sixDUtil, { generateDefaultSixD } from '@/common/data/role/sixDimensions/sixDUtil'
 import { SixD } from '@/common/data/role/sixDimensions/types'
-
-const { generateDefaultSixD } = sixDUtil
 
 // 职业属性加成
 const professionPropertiesAddition: SixD = generateDefaultSixD()

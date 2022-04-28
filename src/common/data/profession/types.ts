@@ -1,8 +1,11 @@
+import { SixD } from './../role/sixDimensions/types'
 export interface Profession {
   en: string
   cn: string
   type: ProfessionType
   grade: ProfessionGrade
+  Growth6D: SixD
+  // Properties6D: SixD
 }
 
 export enum ProfessionType {

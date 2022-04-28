@@ -1,43 +1,43 @@
 import { SixD, SixDArr } from './types'
 
+export function generateDefaultSixD(): SixD {
+  return {
+    power: 0,
+    constitution: 0,
+    skill: 0,
+    agility: 0,
+    perception: 0,
+    will: 0,
+  }
+}
+
+export function generateSixDFromArr(arr: SixDArr): SixD {
+  const [power, constitution, skill, agility, perception, will] = arr
+
+  return {
+    power,
+    constitution,
+    skill,
+    agility,
+    perception,
+    will,
+  }
+}
+
+export function cloneSixD(sixD: SixD): SixD {
+  return {
+    power: sixD.power,
+    constitution: sixD.constitution,
+    skill: sixD.skill,
+    agility: sixD.agility,
+    perception: sixD.perception,
+    will: sixD.will,
+  }
+}
+
 const sixDUtil = {
-  generateDefaultSixD(): SixD {
-    return {
-      power: 0,
-      constitution: 0,
-      skill: 0,
-      agility: 0,
-      perception: 0,
-      will: 0,
-    }
-  },
-
-  generateSixDFromArr(arr: SixDArr): SixD {
-    const [power, constitution, skill, agility, perception, will] = arr
-
-    return {
-      power,
-      constitution,
-      skill,
-      agility,
-      perception,
-      will,
-    }
-  },
-
-  cloneSixD(sixD: SixD): SixD {
-    return {
-      power: sixD.power,
-      constitution: sixD.constitution,
-      skill: sixD.skill,
-      agility: sixD.agility,
-      perception: sixD.perception,
-      will: sixD.will,
-    }
-  },
-
   add(...sixDs: SixD[]): SixD {
-    const returnSixD = this.generateDefaultSixD()
+    const returnSixD = generateDefaultSixD()
 
     sixDs.forEach(sixD => {
       const { power, constitution, skill, agility, perception, will } = sixD
@@ -53,7 +53,7 @@ const sixDUtil = {
   },
 
   multiply(sixD: SixD, multiplier: number | SixD): SixD {
-    const returnSixD = this.cloneSixD(sixD)
+    const returnSixD = cloneSixD(sixD)
 
     if (typeof multiplier === 'number') {
       returnSixD.power *= multiplier
