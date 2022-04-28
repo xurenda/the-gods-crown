@@ -13,8 +13,8 @@ const featurePropertiesAddition: SixD = generateDefaultSixD()
 // 特性百分比加成
 const featurePercentageAddition: SixD = generateDefaultSixD()
 
-export default function calcSixDimensions(level: number): SixD {
-  const levelCoefficient = calcLevelWithCoefficient(level)
+export default function calcSixDimensions(startLevel: number, endLevel: number): SixD {
+  const levelCoefficient = calcLevelWithCoefficient(startLevel, endLevel)
 
   let returnSixD = sixDUtil.add(
     professionPropertiesAddition,

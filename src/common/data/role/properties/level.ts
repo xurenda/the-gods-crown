@@ -4,41 +4,58 @@ const LOW_GROWTH_LEVEL = 60
 const NORMAL_GROWTH_COEFFICIENT = 1
 const LOW_GROWTH_COEFFICIENT = 0.25
 
+const levelErr = new Error('人物等级输入错误')
+
 /**
  * 校验输入等级
  */
-export function adjustLevel(level: number): number {
-  if (typeof level !== 'number') {
-    level = Number(level)
+export function adjustLevel(startLevel: number, endLevel: number): [number, number] {
+  if (typeof startLevel !== 'number') {
+    startLevel = Number(startLevel)
   }
 
   if (
-    Number.isNaN(level) ||
-    level % 1 !== 0 || // 非整数
-    level < MIN_LEVEL ||
-    level > MAX_LEVEL
+    Number.isNaN(startLevel) ||
+    startLevel % 1 !== 0 || // 非整数
+    startLevel < MIN_LEVEL ||
+    startLevel > MAX_LEVEL
   ) {
-    throw new Error('人物等级输入错误')
+    throw levelErr
   }
 
-  return level
+  if (typeof endLevel !== 'number') {
+    endLevel = Number(endLevel)
+  }
+
+  if (
+    Number.isNaN(endLevel) ||
+    endLevel % 1 !== 0 || // 非整数
+    endLevel < MIN_LEVEL ||
+    endLevel > MAX_LEVEL
+  ) {
+    throw levelErr
+  }
+
+  if (startLevel > endLevel) {
+    throw levelErr
+  }
+
+  return [startLevel, endLevel]
 }
 
 /**
  * 计算等级加成（成长）系数
  */
-export function calcLevelWithCoefficient(level: number): number {
-  level = adjustLevel(level)
+export function calcLevelWithCoefficient(startLevel: number, endLevel: number): number {
+  ;[startLevel, endLevel] = adjustLevel(startLevel, endLevel)
 
-  let normal: number
-  let low: number
-  if (level > LOW_GROWTH_LEVEL) {
-    normal = LOW_GROWTH_LEVEL
-    low = level - LOW_GROWTH_LEVEL
-  } else {
-    normal = level
-    low = 0
+  if (startLevel > LOW_GROWTH_LEVEL) {
+    return LOW_GROWTH_COEFFICIENT * (endLevel - startLevel)
   }
 
-  return normal * NORMAL_GROWTH_COEFFICIENT + low * LOW_GROWTH_COEFFICIENT
+  if (endLevel <= LOW_GROWTH_LEVEL) {
+    return NORMAL_GROWTH_COEFFICIENT * (endLevel - startLevel)
+  }
+
+  return NORMAL_GROWTH_COEFFICIENT * (LOW_GROWTH_LEVEL - startLevel) + LOW_GROWTH_COEFFICIENT * (endLevel - LOW_GROWTH_LEVEL)
 }

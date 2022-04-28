@@ -4,8 +4,8 @@ export interface Profession {
   cn: string
   type: ProfessionType
   grade: ProfessionGrade
-  Growth6D: SixD
   // Properties6D: SixD
+  Growth6D: SixD
 }
 
 export enum ProfessionType {
