@@ -5,9 +5,8 @@
 import { generateSixDFromArr } from '@/common/data/role/sixDimensions/sixDUtil'
 import { Profession, ProfessionGrade, ProfessionType } from '../../types'
 
-export const heavyInfantry: Profession = {
-  en: 'heavyInfantry',
-  cn: '重步兵',
+export const 重步兵: Profession = {
+  key: '重步兵',
   type: ProfessionType.heavyInfantry,
   grade: ProfessionGrade.P1,
   Properties6D: generateSixDFromArr([2, 3, 2, 0, 0, 0]),

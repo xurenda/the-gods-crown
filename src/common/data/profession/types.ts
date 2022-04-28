@@ -1,7 +1,6 @@
 import { SixD } from './../role/sixDimensions/types'
 export interface Profession {
-  en: string
-  cn: string
+  key: string
   type: ProfessionType
   grade: ProfessionGrade
   Properties6D: SixD
