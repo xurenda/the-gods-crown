@@ -4,7 +4,7 @@ import { SixDMaybePercentage } from '../role/sixDimensions/types'
 
 export interface Feature {
   key: string
-  ancestry: Ancestry | 'any'
+  ancestry?: Ancestry
   sixD: Partial<SixDMaybePercentage>
   properties: Partial<Properties>
 }
