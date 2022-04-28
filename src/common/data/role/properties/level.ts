@@ -4,6 +4,9 @@ const LOW_GROWTH_LEVEL = 60
 const NORMAL_GROWTH_COEFFICIENT = 1
 const LOW_GROWTH_COEFFICIENT = 0.25
 
+/**
+ * 校验输入等级
+ */
 export function adjustLevel(level: number): number {
   if (typeof level !== 'number') {
     level = Number(level)
@@ -21,6 +24,9 @@ export function adjustLevel(level: number): number {
   return level
 }
 
+/**
+ * 计算等级加成（成长）系数
+ */
 export function calcLevelWithCoefficient(level: number): number {
   level = adjustLevel(level)
 
