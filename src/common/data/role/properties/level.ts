@@ -2,7 +2,7 @@ const MIN_LEVEL = 1
 const MAX_LEVEL = 150
 const LOW_GROWTH_LEVEL = 61
 const NORMAL_GROWTH_COEFFICIENT = 1
-const LOW_GROWTH_COEFFICIENT = 0.25
+const LOW_GROWTH_COEFFICIENT = 0.35
 
 const levelErr = new Error('人物等级输入错误')
 
