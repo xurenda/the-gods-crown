@@ -6,10 +6,18 @@ const LOW_GROWTH_COEFFICIENT = 0.35
 
 const levelErr = new Error('人物等级输入错误')
 
+export type Level = [number, number]
+
 /**
  * 校验输入等级
  */
-export function adjustLevel(startLevel: number, endLevel: number): [number, number] {
+export function adjustLevel(level: Level): Level {
+  if (!Array.isArray(level)) {
+    throw levelErr
+  }
+
+  let [startLevel, endLevel] = level
+
   if (typeof startLevel !== 'number') {
     startLevel = Number(startLevel)
   }
@@ -46,8 +54,8 @@ export function adjustLevel(startLevel: number, endLevel: number): [number, numb
 /**
  * 计算等级加成（成长）系数
  */
-export function calcLevelWithCoefficient(startLevel: number, endLevel: number): number {
-  ;[startLevel, endLevel] = adjustLevel(startLevel, endLevel)
+export function calcLevelWithCoefficient(level: Level): number {
+  const [startLevel, endLevel] = adjustLevel(level)
 
   if (startLevel > LOW_GROWTH_LEVEL) {
     return LOW_GROWTH_COEFFICIENT * (endLevel - startLevel)
