@@ -32,9 +32,9 @@ export const alchemist: Profession = {
   grade: ProfessionGrade.P3,
 }
 
-export const poet: Profession = {
-  en: 'poet',
-  cn: '诗人',
+export const bard: Profession = {
+  en: 'bard',
+  cn: '吟游诗人',
   type: ProfessionType.special,
   grade: ProfessionGrade.P3,
 }
