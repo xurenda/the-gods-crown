@@ -11,8 +11,8 @@ export const royalKnight: Profession = {
   grade: ProfessionGrade.P3,
 }
 
-export const heavyCavalry: Profession = {
-  en: 'heavyCavalry',
+export const greatHeavyCavalry: Profession = {
+  en: 'greatHeavyCavalry',
   cn: '重装骑兵',
   type: ProfessionType.cavalry,
   grade: ProfessionGrade.P3,

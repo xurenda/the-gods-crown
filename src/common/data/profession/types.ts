@@ -14,7 +14,6 @@ export enum ProfessionType {
 }
 
 export enum ProfessionGrade {
-  P0 = 'P0',
   P1 = 'P1',
   P2 = 'P2',
   P3 = 'P3',
