@@ -7,6 +7,15 @@ export interface SixD {
   will: number
 }
 
+export interface SixDMaybePercentage {
+  power: number | string
+  constitution: number | string
+  skill: number | string
+  agility: number | string
+  perception: number | string
+  will: number | string
+}
+
 export type SixDArr = [number, number, number, number, number, number]
 
 export interface Dimension {
