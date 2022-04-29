@@ -1,4 +1,6 @@
-import { SixD, SixDArr } from './types'
+import { DimensionEn, DimensionGrade, InputSixD, InputSixDHandler, SixD, SixDArr } from './types'
+
+export const sixDErr = new Error('输入六维错误')
 
 export function generateDefaultSixD(): SixD {
   return {
@@ -35,6 +37,47 @@ export function cloneSixD(sixD: SixD): SixD {
   }
 }
 
+export function handleInputSixD(sixD: Partial<InputSixD>, cb: (info: InputSixDHandler) => void): void {
+  ;['power', 'constitution', 'skill', 'agility', 'perception', 'will'].forEach(key => {
+    const val = sixD[key as keyof InputSixD]
+
+    if (val == null) {
+      cb({
+        type: 'null',
+        key: key as DimensionEn,
+        val: 0,
+      })
+    } else if (typeof val === 'string') {
+      if (DimensionGrade[val as keyof typeof DimensionGrade]) {
+        cb({
+          type: 'grade',
+          key: key as DimensionEn,
+          val: val as DimensionGrade,
+        })
+        return
+      }
+
+      if (!val.endsWith('%')) throw sixDErr
+      const percentageVal = Number(val.slice(0, -1)) / 100
+      if (Number.isNaN(percentageVal)) throw sixDErr
+
+      cb({
+        type: 'percentage',
+        key: key as DimensionEn,
+        val: percentageVal,
+      })
+    } else if (typeof val === 'number') {
+      cb({
+        type: 'value',
+        key: key as DimensionEn,
+        val,
+      })
+    } else {
+      throw sixDErr
+    }
+  })
+}
+
 const sixDUtil = {
   add(...sixDs: SixD[]): SixD {
     const returnSixD = generateDefaultSixD()
@@ -50,6 +93,18 @@ const sixDUtil = {
     })
 
     return returnSixD
+  },
+
+  addTo(targetSixD: SixD, ...sourceSixDs: SixD[]): void {
+    sourceSixDs.forEach(sixD => {
+      const { power, constitution, skill, agility, perception, will } = sixD
+      targetSixD.power += power
+      targetSixD.constitution += constitution
+      targetSixD.skill += skill
+      targetSixD.agility += agility
+      targetSixD.perception += perception
+      targetSixD.will += will
+    })
   },
 
   multiply(sixD: SixD, multiplier: number | SixD): SixD {

@@ -7,7 +7,7 @@ export interface SixD {
   will: number
 }
 
-export interface SixDMaybePercentage {
+export interface InputSixD {
   power: number | string
   constitution: number | string
   skill: number | string
@@ -45,4 +45,18 @@ export enum DimensionGrade {
   C = 'C',
   D = 'D',
   E = 'E',
+}
+
+export type InputSixDHandler = InputSixDHandlerA | InputSixDHandlerB
+
+interface InputSixDHandlerA {
+  type: 'null' | 'value' | 'percentage'
+  key: DimensionEn
+  val: number
+}
+
+interface InputSixDHandlerB {
+  type: 'grade'
+  key: DimensionEn
+  val: DimensionGrade
 }
