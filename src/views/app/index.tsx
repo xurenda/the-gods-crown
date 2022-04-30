@@ -1,11 +1,10 @@
+import ProfessionInput from '@/common/components/ProfessionInput'
 import { RecoilRoot } from 'recoil'
 
 function App() {
-  window.log('App', window)
-
   return (
     <RecoilRoot>
-      <div>ok</div>
+      <ProfessionInput />
     </RecoilRoot>
   )
 }
