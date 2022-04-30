@@ -1,5 +1,6 @@
 import ProfessionInput from '@/common/components/ProfessionInput'
 import { RecoilRoot } from 'recoil'
+import './app.less'
 
 function App() {
   return (

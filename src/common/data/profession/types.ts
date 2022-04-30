@@ -16,7 +16,7 @@ export enum ProfessionType {
 }
 
 export enum ProfessionGrade {
-  P1 = 'P1',
-  P2 = 'P2',
-  P3 = 'P3',
+  P1 = '一转',
+  P2 = '二转',
+  P3 = '三转',
 }
