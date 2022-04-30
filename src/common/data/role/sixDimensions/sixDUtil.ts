@@ -1,6 +1,10 @@
-import { DimensionEn, DimensionGrade, InputSixD, InputSixDHandler, SixD, SixDArr } from './types'
+import { DimensionEn, DimensionGrade, DimensionZn, InputSixD, InputSixDHandler, SixD, SixDArr } from './types'
 
 export const sixDErr = new Error('输入六维错误')
+
+export const sixDZnArr = ['力量', '体质', '技巧', '敏捷', '感知', '意志']
+export const sixDEnArr = ['power', 'constitution', 'skill', 'agility', 'perception', 'will']
+export const sixDGradeArr = ['SSS', 'SS', 'S', 'A', 'B', 'C', 'D', 'E']
 
 export function generateDefaultSixD(): SixD {
   return {
@@ -38,7 +42,7 @@ export function cloneSixD(sixD: SixD): SixD {
 }
 
 export function handleInputSixD(sixD: Partial<InputSixD>, cb: (info: InputSixDHandler) => void): void {
-  ;['power', 'constitution', 'skill', 'agility', 'perception', 'will'].forEach(key => {
+  sixDEnArr.forEach(key => {
     const val = sixD[key as keyof InputSixD]
 
     if (val == null) {
